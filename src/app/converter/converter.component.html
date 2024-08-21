@@ -1,0 +1,37 @@
+<div class="ui container">
+  <h2 class="ui header">Currency Converter</h2>
+  <form [formGroup]="form" class="ui form" (ngSubmit)="onSubmit()">
+    <div suiFormField class="field">
+      <label>From</label>
+      <sui-select formControlName="fromCurrency" class="selection" [suiOptions]="currencies">
+      </sui-select>
+      <div *ngIf="hasError('fromCurrency', 'required')" class="ui pointing red basic label">
+        {{ getErrorMessage('fromCurrency') }}
+      </div>
+    </div>
+    <div suiFormField class="field">
+      <label>To</label>
+      <sui-select formControlName="toCurrency" class="selection" [suiOptions]="currencies">
+      </sui-select>
+      <div *ngIf="hasError('toCurrency', 'required')" class="ui pointing red basic label">
+        {{ getErrorMessage('toCurrency') }}
+      </div>
+    </div>
+    <div class="field">
+      <label>Amount</label>
+      <input type="number" formControlName="amount" placeholder="Amount">
+      <div *ngIf="hasError('amount', 'required')" class="ui pointing red basic label">
+        {{ getErrorMessage('amount') }}
+      </div>
+      <div *ngIf="hasError('amount', 'min')" class="ui pointing red basic label">
+        {{ getErrorMessage('amount') }}
+      </div>
+    </div>
+    <button type="submit" class="ui button primary" [disabled]="form.invalid">Convert</button>
+  </form>
+
+  <div *ngIf="conversionResult" class="ui raised segment">
+    <p>{{ conversionResult }}</p>
+  </div>
+
+</div>
