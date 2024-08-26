@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-.container{
+.container {
   box-sizing: border-box;
   padding: 20px;
+}
+
+
+.toast-success, .toast-error {
+  width: max-content;
+  margin: .5em auto;
+  background-color: white;
+  padding: 1em;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px rgba(34, 36, 38, 0.15),
+  0 0 0 1px rgba(34, 36, 38, 0.15);
+  border-radius: 4px;
 }

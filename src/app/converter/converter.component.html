@@ -8,6 +8,9 @@
       <div *ngIf="hasError('fromCurrency', 'required')" class="ui pointing red basic label">
         {{ getErrorMessage('fromCurrency') }}
       </div>
+      <div *ngIf="hasError('fromCurrency', 'required')" class="ui pointing red basic label">
+        {{ getErrorMessage('fromCurrency') }}
+      </div>
     </div>
     <div suiFormField class="field">
       <label>To</label>
@@ -27,7 +30,7 @@
         {{ getErrorMessage('amount') }}
       </div>
     </div>
-    <button type="submit" class="ui button primary" [disabled]="form.invalid">Convert</button>
+    <button type="submit" class="ui button primary" [disabled]="form.untouched">Convert</button>
   </form>
 
   <div *ngIf="conversionResult" class="ui raised segment">

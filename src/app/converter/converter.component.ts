@@ -69,7 +69,7 @@ export class ConverterComponent implements OnInit {
   }
   // To check the validation
   hasError(controlName: string, errorName: string): boolean {
-    if (!this.form.valid) {
+    if (this.form.touched) {
       return this.form.controls[controlName].hasError(errorName);
     }
     return false;
